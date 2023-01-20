@@ -1,0 +1,9 @@
+pull_request_rules:
+  - name: automatic merge for main when CI passes and label
+    conditions:
+      - check-success=CheckChanges
+      - label=mergify
+      - base=main
+    actions:
+      merge:
+        method: merge
